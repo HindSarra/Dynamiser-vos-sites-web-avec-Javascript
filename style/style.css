@@ -1,0 +1,123 @@
+/*la font utilisé */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+*{
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  padding: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.myView{
+  background:linear-gradient( 30deg,#c0392b, #ffeaa7);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+ .dice-game{
+  margin: auto;
+  display: flex;
+  z-index: 9;
+  background: #dfe6e9;
+  height: 95vh;
+  width: 95vw;
+  background-image: linear-gradient(90deg, white 50%, rgb(215, 211, 211) 50%);
+  box-shadow: 0px 9px 23px rgba(0,0,0,0.2);
+  
+}
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+   .bi  {
+  color: #c0392b;
+  height: 30px;
+  width: 30px;
+} 
+
+
+
+.player-turn h2 {
+  font-weight: 500;
+}
+
+.player-turn h2::after {
+  content: "\2022";
+  position: absolute;
+  color: #c0392b;
+  
+}
+.button-new-game h3, .button-action p {
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.button-new-game {
+  display: flex;
+  margin: 2rem auto;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+.button-action {
+  position: absolute;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-50%);
+  left: 50%;
+  font-weight: 300;
+  padding: 300px 0 0 0;
+}
+.hold, .roll-dice, h3{
+  font-size: 1.2rem;
+
+}
+.player-1 {
+padding: 100px 100px;
+width: 50vw;
+float: left;
+flex-direction: column;
+}
+.player-2{
+  padding: 90px 100px;
+  width: 50vw;
+  float: right;
+  flex-direction: column;
+}
+.name-player-1, .name-player-2{
+  text-align: center;
+}
+ .scores, .player-turn{
+ display: flex;
+ justify-content: center;
+ font-size: 2rem;
+
+}
+.dice{
+position: absolute;
+top: 37%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+.dice img{
+  box-shadow: 12px 12px 10px 10px rgba(0, 0, 255, .2);
+
+}
+.current-tow, .current-one{
+  bottom: 20px;
+  background: #c0392b;
+  align-items: center;
+  padding: 10px;
+  margin: 20%;
+  text-align: center;
+}
+.bi:hover{
+  font-weight: 700px;
+  font-size:1.5rem ;
+}
