@@ -7,7 +7,7 @@
   text-decoration: none;
   text-transform: uppercase;
 }
-.myView{
+.myVieu{
   background:linear-gradient( 30deg,#c0392b, #ffeaa7);
   display:flex;
   justify-content: center;
@@ -45,12 +45,7 @@
   font-weight: 500;
 }
 
-.player-turn h2::after {
-  content: "\2022";
-  position: absolute;
-  color: #c0392b;
-  
-}
+
 .button-new-game h3, .button-action p {
   font-size: 1.2rem;
   font-weight: 300;
@@ -63,6 +58,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 6;
+
 }
 .button-action {
   position: absolute;
@@ -109,7 +105,7 @@ transform: translate(-50%, -50%);
   box-shadow: 12px 12px 10px 10px rgba(0, 0, 255, .2);
 
 }
-.current-tow, .current-one{
+.current-two, .current-one{
   bottom: 20px;
   background: #c0392b;
   align-items: center;
@@ -117,7 +113,12 @@ transform: translate(-50%, -50%);
   margin: 20%;
   text-align: center;
 }
-.bi:hover{
+.current-two p, .current-one p{
+  font-size: 1.5rem;
+  font-weight:700;
+
+}
+button:hover{
   font-weight: 700px;
   font-size:1.5rem ;
 }
