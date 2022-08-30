@@ -6,9 +6,11 @@
   padding: 0;
   text-decoration: none;
   text-transform: uppercase;
+  box-sizing: border-box;
 }
+/* style de la background de mon jeu */
 .myView{
-  background:linear-gradient( 30deg,#c0392b, #ffeaa7);
+  background:linear-gradient( 30deg,#EB4D4D, #ffeaa7);
   display:flex;
   justify-content: center;
   align-items: center;
@@ -26,79 +28,48 @@
   box-shadow: 0px 9px 23px rgba(0,0,0,0.2);
   
 }
-  button {
-    background: none;
-    outline: none;
-    border: none;
-    cursor: pointer;
-}
-
-   .bi  {
-  color: #c0392b;
-  height: 30px;
-  width: 30px;
-} 
-
-
-
-.player-turn h2 {
-  font-weight: 500;
-}
-
-.player-turn h2::after {
-  content: "\2022";
-  position: absolute;
-  color: #c0392b;
-  
-}
-.button-new-game h3, .button-action p {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-.button-new-game {
-  display: flex;
-  margin: 2rem auto;
-  justify-content: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 6;
-}
-.button-action {
-  position: absolute;
-  width: 20%;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(-50%);
-  left: 50%;
-  font-weight: 300;
-  padding: 300px 0 0 0;
-}
-.hold, .roll-dice, h3{
-  font-size: 1.2rem;
-
-}
-.player-1 {
-padding: 100px 100px;
-width: 50vw;
-float: left;
-flex-direction: column;
-}
-.player-2{
-  padding: 90px 100px;
+/* le style de mes joueurs  */
+.player-1, .player-2{
+  font-size: 2rem;
+  padding: 100px 100px;
   width: 50vw;
-  float: right;
   flex-direction: column;
 }
-.name-player-1, .name-player-2{
+.player-1 {float: left}
+.player-2{ float: right;}
+
+.player-name{
   text-align: center;
 }
- .scores, .player-turn{
+.active .player-name::after {
+content: "\2022";
+color: #EB4D4D;
+position: absolute;
+font-size: 50px;
+}
+ .scores{
  display: flex;
  justify-content: center;
  font-size: 2rem;
-
+ color: #EB4D4D;
 }
+.current-box{
+  bottom: 30px;
+  width: 30%;
+  background: #EB4D4D;;
+  align-items: center;
+  padding: 12px;
+  margin:30% ;
+  text-align: center;
+}
+.current-label{
+  font-size: small; 
+}
+.current-score{
+  color: #dfe6e9;
+  font-weight: 600;
+}
+/* style de l'imge */
 .dice{
 position: absolute;
 top: 37%;
@@ -106,18 +77,42 @@ left: 50%;
 transform: translate(-50%, -50%);
 }
 .dice img{
-  box-shadow: 12px 12px 10px 10px rgba(0, 0, 255, .2);
+  box-shadow: 12px 12px 10px 10px rgba(171, 92, 92, 0.2);
+}
+/* stylyser les boutons*/
+button {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.bi {
+  color: #EB4D4D;
+  display: inline-block;
+  margin-right: 15px;
+  width:25px;
+  height: 25px;
+  margin-top: -5px;
+  transition: margin 0.3s;
+}
 
+.button-new-game { top: 45px;
 }
-.current-tow, .current-one{
-  bottom: 20px;
-  background: #c0392b;
-  align-items: center;
-  padding: 10px;
-  margin: 20%;
-  text-align: center;
+.roll-dice { top: 403px;
 }
-.bi:hover{
-  font-weight: 700px;
-  font-size:1.5rem ;
+.hold { top: 467px;
+}
+.button-new-game,.roll-dice,.hold{
+  width: 200px;
+  left: 50%;
+  font-size: 1rem;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+  font-weight: 300;             
+  transition: background-color 0.3s, color 0.3s;
+}
+button:hover { font-weight: 600; }
+button:hover .bi { margin-right: 20px; }
+button:focus {
+  outline: none;
 }
