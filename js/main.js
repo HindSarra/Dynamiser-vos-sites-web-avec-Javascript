@@ -1,36 +1,46 @@
-// cree des varibles pour commencer le jeu
-let player1Score = 0;
-let player2Score = 0;
-let playTurn = true;
-let playerActuel = 1;
-let round = 0;
-// crees des varibales pour interagir avec le DOM
-const player1Dice = document.querySelector(".global-score-1");
-const player2Dice = document.querySelector(".global-score-2");
-// const currentScoreOne = document.querySelector("#current-score-one");
-// const currentScoreTow = document.querySelector("#current-score-tow");
+//Declaration des variable
+let scors, playOn, roundScore, actuelPlayer;
+
+//declaration de la function qui initialise le jeu
+toInit();
+
+//variable de mon bouton roll-dice
 const rollBtn = document.querySelector(".roll-dice");
-const newGameBtn = document.querySelector(".button-new-game");
-const hold = document.querySelector(".hold");
-let dice = document.querySelector(".dice img");
-// les evenements de nos boutons roll hold et new game
+
+//crées les evenments lorsqu'on clique sur boutton roll-dice
+
 rollBtn.addEventListener("click", () => {
-  const randomNumber = Math.floor(Math.random() * 6) + 1;
-  // indiquer sur quel joueur on est
+  if (playOn) {
+    //numero entre 1 et 6
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
 
-  if (playTurn) {
-    dice.style.display = "block";
-    dice.src = "./img/dice-" + randomNumber + ".png";
-  }
-  //Pour faire tourné le jeu
-  if (randomNumber !== 1) {
-    // On catch le score du round.
-    round += randomNumber;
-    document.querySelector("#current-score-" + actualPlayer).textContent =
-      round;
+    //apple de dés aleatoire
+    let diceImg = document.querySelector(".dice");
+    diceImg.style.display = "block";
+    diceImg.src = `./img/dice-${randomNumber}.png`;
 
-    // On verifie que le dernier roll est égal
-  } else {
-    //function new game
+    // incrementé dans notre score locale
+    if (randomNumber !== 1) {
+      roundScore += randomNumber;
+      let current = (document.querySelector(
+        "#current-" + actuelPlayer
+      ).textContent = roundScore);
+      console.log(current);
+    }
   }
 });
+
+//function qui réeinisialise le jeu a zero
+function toInit() {
+  scors = [0, 0];
+  playOn = true;
+  roundScore = 0;
+  actuelPlayer = 1;
+
+  document.querySelector("#score-1").textContent = "0";
+  document.querySelector("#score-2").textContent = "0";
+  document.querySelector("#current-1").textContent = "0";
+  document.querySelector("#current-2").textContent = "0";
+  document.querySelector("#name-1").textContent = "Player-1";
+  document.querySelector("#name-2").textContent = "Player-2";
+}

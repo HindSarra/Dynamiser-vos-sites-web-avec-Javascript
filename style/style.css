@@ -29,23 +29,25 @@
   
 }
 /* le style de mes joueurs  */
-.player-1, .player-2{
+.player-1-side, .player-2-side{
   font-size: 2rem;
   padding: 100px 100px;
   width: 50vw;
   flex-direction: column;
 }
-.player-1 {float: left}
-.player-2{ float: right;}
+.player-1-side {float: left}
+.player-2-side{ float: right;}
 
 .player-name{
   text-align: center;
 }
+.active .player-name { font-weight: 900; }
 .active .player-name::after {
 content: "\2022";
 color: #EB4D4D;
 position: absolute;
 font-size: 50px;
+top:100px;
 }
  .scores{
  display: flex;
