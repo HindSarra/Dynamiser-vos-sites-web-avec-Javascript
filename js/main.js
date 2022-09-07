@@ -1,12 +1,14 @@
 //Declaration des variable
 let scors, playOn, roundScore, actuelPlayer;
 
+const scor1 = document.querySelector("#score-1");
+const scor2 = document.querySelector("#score-2");
 //declaration de la function qui initialise le jeu
 toInit();
 
 //variable de mon bouton roll-dice
 const rollBtn = document.querySelector(".roll-dice");
-
+let diceImg = document.querySelector(".dice");
 //crées les evenments lorsqu'on clique sur boutton roll-dice
 
 rollBtn.addEventListener("click", () => {
@@ -15,7 +17,6 @@ rollBtn.addEventListener("click", () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1;
 
     //apple de dés aleatoire
-    let diceImg = document.querySelector(".dice");
     diceImg.style.display = "block";
     diceImg.src = `./img/dice-${randomNumber}.png`;
 
@@ -23,12 +24,55 @@ rollBtn.addEventListener("click", () => {
     if (randomNumber !== 1) {
       roundScore += randomNumber;
       let current = (document.querySelector(
-        "#current-" + actuelPlayer
+        `#current-${actuelPlayer}`
       ).textContent = roundScore);
       console.log(current);
     }
+  } else {
+    // passer a l'autre joueur
+    switchPlayer();
   }
 });
+// variable du bouton Hold= recupére
+const hold = document.querySelector(".hold");
+console.log(hold);
+//evenemet de la variable hold
+hold.addEventListener("click", () => {
+  if (playOn) {
+    //incrementer le score local au score global
+    scors[actuelPlayer] += roundScore;
+    //selectionner notre score de l'elemnt html
+    document.querySelector(`#score-${actuelPlayer}`).textContent =
+      scors[actuelPlayer];
+
+    //introduire la valeur du gagnant
+    if (scors[actuelPlayer] >= 100) {
+      document.querySelector(`#name-${actuelPlayer}`).textContent = "Winner";
+      document.querySelector(".dice").style.display = "none";
+      document
+        .querySelector(`.player-${actuelPlayer}-side`)
+        .classList.add("winner");
+
+      document
+        .querySelector(`.player-${actuelPlayer}-side`)
+        .classList.remove("active");
+      playOn = false;
+    } else {
+      switchPlayer();
+    }
+  }
+});
+function switchPlayer() {
+  roundScore = 0;
+  actuelPlayer === 1 ? (actuelPlayer = 2) : (actuelPlayer = 1);
+
+  document.querySelector("#current-1").textContent = "0";
+  console.log(scor1);
+  document.querySelector("#current-2").textContent = "0";
+  console.log(scor2);
+  document.querySelector(".player-1-side").classList.toggle("active");
+  document.querySelector(".player-2-side").classList.toggle("active");
+}
 
 //function qui réeinisialise le jeu a zero
 function toInit() {
@@ -37,10 +81,16 @@ function toInit() {
   roundScore = 0;
   actuelPlayer = 1;
 
-  document.querySelector("#score-1").textContent = "0";
-  document.querySelector("#score-2").textContent = "0";
-  document.querySelector("#current-1").textContent = "0";
-  document.querySelector("#current-2").textContent = "0";
-  document.querySelector("#name-1").textContent = "Player-1";
-  document.querySelector("#name-2").textContent = "Player-2";
+  document.querySelector(".dice").style.display = "none";
+  document.getElementById("score-1").textContent = "0";
+  document.getElementById("score-2").textContent = "0";
+  document.getElementById("current-1").textContent = "0";
+  document.getElementById("current-2").textContent = "0";
+  document.getElementById("name-1").textContent = "Player-1";
+  document.getElementById("name-2").textContent = "Player-2";
+  document.querySelector(".player-1-side").classList.remove("winner");
+  document.querySelector(".player-2-side").classList.remove("winner");
+  document.querySelector(".player-1-side").classList.remove("active");
+  document.querySelector(".player-2-side").classList.remove("active");
+  document.querySelector(".player-1-side").classList.add("active");
 }
