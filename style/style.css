@@ -100,9 +100,9 @@ button {
 
 .button-new-game { top: 45px;
 }
-.roll-dice { top: 403px;
+.roll-dice { top: 350px;
 }
-.hold { top: 467px;
+.hold { top: 390px;
 }
 .button-new-game,.roll-dice,.hold{
   width: 200px;

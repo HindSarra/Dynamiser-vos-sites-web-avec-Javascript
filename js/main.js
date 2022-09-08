@@ -1,8 +1,6 @@
 //Declaration des variable
 let scors, playOn, roundScore, actuelPlayer;
 
-const scor1 = document.querySelector("#score-1");
-const scor2 = document.querySelector("#score-2");
 //declaration de la function qui initialise le jeu
 toInit();
 
@@ -23,10 +21,8 @@ rollBtn.addEventListener("click", () => {
     // incrementé dans notre score locale
     if (randomNumber !== 1) {
       roundScore += randomNumber;
-      let current = (document.querySelector(
-        `#current-${actuelPlayer}`
-      ).textContent = roundScore);
-      console.log(current);
+      document.querySelector(`#current-${actuelPlayer}`).textContent =
+        roundScore;
     }
   } else {
     // passer a l'autre joueur
@@ -65,25 +61,23 @@ hold.addEventListener("click", () => {
 function switchPlayer() {
   roundScore = 0;
   actuelPlayer === 1 ? (actuelPlayer = 2) : (actuelPlayer = 1);
-
+  console.log(scors);
   document.querySelector("#current-1").textContent = "0";
-  console.log(scor1);
   document.querySelector("#current-2").textContent = "0";
-  console.log(scor2);
   document.querySelector(".player-1-side").classList.toggle("active");
   document.querySelector(".player-2-side").classList.toggle("active");
 }
 
 //function qui réeinisialise le jeu a zero
 function toInit() {
-  scors = [0, 0];
+  scors = [0, 0, 0];
   playOn = true;
   roundScore = 0;
   actuelPlayer = 1;
 
   document.querySelector(".dice").style.display = "none";
-  document.getElementById("score-1").textContent = "0";
-  document.getElementById("score-2").textContent = "0";
+  scors[0] = 0;
+  scors[1] = 0;
   document.getElementById("current-1").textContent = "0";
   document.getElementById("current-2").textContent = "0";
   document.getElementById("name-1").textContent = "Player-1";
