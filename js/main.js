@@ -5,14 +5,12 @@ let scors, playOn, roundScore, actuelPlayer;
 toInit();
 
 //variable de mon bouton roll-dice
-const rollBtn = document.querySelector(".roll-dice");
 let diceImg = document.querySelector(".dice");
 //crées les evenments lorsqu'on clique sur boutton roll-dice
-
-rollBtn.addEventListener("click", () => {
+document.querySelector(".roll-dice").addEventListener("click", () => {
+  let randomNumber = Math.floor(Math.random() * 6) + 1;
   if (playOn) {
     //numero entre 1 et 6
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
 
     //apple de dés aleatoire
     diceImg.style.display = "block";
@@ -29,9 +27,9 @@ rollBtn.addEventListener("click", () => {
     switchPlayer();
   }
 });
+
 // variable du bouton Hold= recupére
 const hold = document.querySelector(".hold");
-console.log(hold);
 //evenemet de la variable hold
 hold.addEventListener("click", () => {
   if (playOn) {
@@ -48,7 +46,6 @@ hold.addEventListener("click", () => {
       document
         .querySelector(`.player-${actuelPlayer}-side`)
         .classList.add("winner");
-
       document
         .querySelector(`.player-${actuelPlayer}-side`)
         .classList.remove("active");
@@ -58,15 +55,21 @@ hold.addEventListener("click", () => {
     }
   }
 });
+
 function switchPlayer() {
-  roundScore = 0;
   actuelPlayer === 1 ? (actuelPlayer = 2) : (actuelPlayer = 1);
-  console.log(scors);
+  roundScore = 0;
   document.querySelector("#current-1").textContent = "0";
   document.querySelector("#current-2").textContent = "0";
   document.querySelector(".player-1-side").classList.toggle("active");
   document.querySelector(".player-2-side").classList.toggle("active");
+  document.querySelector(".dice").style.display = "none";
 }
+
+// la variable de bouton de  nouvelle partie
+const newPartie = document.querySelector(".button-new-game");
+// evenement du bouton nouvelle partie
+newPartie.addEventListener("click", toInit);
 
 //function qui réeinisialise le jeu a zero
 function toInit() {
@@ -75,9 +78,13 @@ function toInit() {
   roundScore = 0;
   actuelPlayer = 1;
 
-  document.querySelector(".dice").style.display = "none";
-  scors[0] = 0;
-  scors[1] = 0;
+  // document.querySelector(".dice").style.display = "none";
+  document.querySelector(".dice").style.display = "block";
+  document.querySelector(".dice").src = "./img/dice-0.png";
+
+  document.getElementById("score-1").textContent = "0";
+  document.getElementById("score-2").textContent = "0";
+
   document.getElementById("current-1").textContent = "0";
   document.getElementById("current-2").textContent = "0";
   document.getElementById("name-1").textContent = "Player-1";
