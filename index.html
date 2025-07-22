@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de dés</title>
+  <link rel="shortcut icon" href="./img/logo_page.png">
+  <link rel="stylesheet" href="./style/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-white">
+
+  <div class="container py-5">
+    <div class="row justify-content-center mb-4">
+      <div class="col-12 text-center">
+        <h1>Jeu de dés</h1>
+        <p class="lead">Le premier à 100 points gagne !</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Joueur 1 -->
+      <div class="col-md-6">
+        <div class="p-3 border rounded bg-secondary player-side player-1-side active text-center">
+          <h2 id="name-1">Player-1</h2>
+          <h3 id="score-1">0</h3>
+          <div class="bg-dark p-2 rounded mt-3">
+            <p class="mb-1">Current</p>
+            <p id="current-1">0</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Joueur 2 -->
+      <div class="col-md-6">
+        <div class="p-3 border rounded bg-secondary player-side player-2-side text-center">
+          <h2 id="name-2">Player-2</h2>
+          <h3 id="score-2">0</h3>
+          <div class="bg-dark p-2 rounded mt-3">
+            <p class="mb-1">Current</p>
+            <p id="current-2">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dé -->
+    <div class="text-center my-4">
+      <img class="dice img-fluid" src="./img/dice-0.png" alt="Dé" style="max-width: 100px; display: none;">
+    </div>
+
+    <!-- Boutons -->
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3 text-center">
+      <button class="btn btn-outline-light button-new-game">
+        Nouvelle Partie
+      </button>
+      <button class="btn btn-outline-light roll-dice">
+        Lancer le dé
+      </button>
+      <button class="btn btn-outline-light hold">
+        Hold
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
