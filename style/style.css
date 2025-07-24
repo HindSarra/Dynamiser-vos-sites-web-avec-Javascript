@@ -38,3 +38,44 @@
     padding: 0.5rem;
   }
 }
+
+/* style.css */
+
+.player-side.winner {
+  background-color: #198754 !important; /* Vert Bootstrap */
+  color: white;
+}
+
+.player-side.active {
+  border: 3px solid #ffc107; /* Jaune pour le joueur actif */
+}
+
+.dice {
+  transition: transform 0.3s ease;
+}
+
+.dice:hover {
+  transform: rotate(10deg);
+}
+
+/* Media Queries optionnels */
+@media (max-width: 768px) {
+  .player-side {
+    font-size: 0.9rem;
+  }
+
+  .dice {
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .player-side {
+    padding: 1rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
