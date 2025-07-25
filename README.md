@@ -3,7 +3,7 @@ Jeu de Dés (2 Joueurs)
 Un petit jeu de dés en JavaScript où le premier joueur à atteindre 100 points remporte la partie. Ce projet utilise HTML, CSS, Bootstrap et JavaScript Vanilla (ES6+).
 📸 Aperçu
 
-🚀 Fonctionnalités
+##🚀 Fonctionnalités
 
     🎯 Deux joueurs.
 
@@ -27,7 +27,7 @@ Un petit jeu de dés en JavaScript où le premier joueur à atteindre 100 points
 
     JavaScript Vanilla (ES6) — Logique du jeu (sans framework JS).
 
-📂 Structure du projet
+##📂 Structure du projet
 
 /project-root/
 │
@@ -46,7 +46,7 @@ Un petit jeu de dés en JavaScript où le premier joueur à atteindre 100 points
 │   └── logo_page.png
 └── README.md
 
-⚙️ Comment exécuter le projet
+##⚙️ Comment exécuter le projet
 
     Clone ce dépôt ou télécharge le .zip.
 
@@ -56,7 +56,7 @@ Un petit jeu de dés en JavaScript où le premier joueur à atteindre 100 points
 
     Joue !
 
-🎉 Objectifs pédagogiques
+##🎉 Objectifs pédagogiques
 
 Ce projet te permet de pratiquer :
 
@@ -70,7 +70,7 @@ Ce projet te permet de pratiquer :
 
     L'organisation de fichiers dans un projet Front-end.
 
-🔥 Idées d’améliorations (Roadmap)
+##🔥 Idées d’améliorations (Roadmap)
 
     Ajouter des animations de lancer de dé (CSS/JS).
 
@@ -81,6 +81,8 @@ Ce projet te permet de pratiquer :
     Sauvegarder le score dans le localStorage.
 
     Ajouter des règles avancées (ex : perdre tout son score si on fait deux fois 1 de suite).
+## 🚀 Lien du Projet
+🔗 [Voir le lien en ligne](https://hindsarra.github.io/Dynamiser-vos-sites-web-avec-Javascript/)
 
 📜 Licence
 
