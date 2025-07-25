@@ -82,8 +82,11 @@ Ce projet te permet de pratiquer :
 
     Ajouter des règles avancées (ex : perdre tout son score si on fait deux fois 1 de suite).
 ## 🚀 Lien du Projet
-🔗 [Voir le lien en ligne](https://hindsarra.github.io/Dynamiser-vos-sites-web-avec-Javascript/)
+🔗 Voire le line du projet [cliquez ici](https://hindsarra.github.io/Dynamiser-vos-sites-web-avec-Javascript/)
 
-📜 Licence
+##![Aperçu du projet](img/logo_page.png)
+
+
+##📜 Licence
 
 Projet libre d’apprentissage — Tu peux le modifier et le réutiliser ! ✌️
