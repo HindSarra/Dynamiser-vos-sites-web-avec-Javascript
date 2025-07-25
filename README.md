@@ -84,7 +84,7 @@ Ce projet te permet de pratiquer :
 ## 🚀 Lien du Projet
 🔗 Voire le line du projet [cliquez ici](https://hindsarra.github.io/Dynamiser-vos-sites-web-avec-Javascript/)
 
-##![Aperçu du projet](img/logo_page.png)
+##![Aperçu du projet](img/capture.png)
 
 
 ##📜 Licence
